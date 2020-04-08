@@ -6,25 +6,18 @@
 
     --Lime-Green: hsl(163, 72%, 41%);
     --Bright-Red: hsl(356, 69%, 56%);
+
     --Facebook: hsl(195, 100%, 50%);
     --Twitter: hsl(203, 89%, 53%);
     --Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
     --YouTube: hsl(348, 97%, 39%);
 
-    --LT-Toggle: hsl(230, 22%, 74%);
-    --DT-Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
-
-    --LT-Bottom-BG: hsl(0, 0%, 100%);
-    --LT-Top-BG: hsl(225, 100%, 98%);
-    --LT-Card-BG: hsl(227, 47%, 96%);
-    --LT-Dark-Grayish-Blue: hsl(228, 12%, 44%);
-    --LT-Very-Dark-Blue: hsl(230, 17%, 14%);
-
-    --DT-Bottom-BG: hsl(230, 17%, 14%);
-    --DT-Top-BG: hsl(232, 19%, 15%);
-    --DT-Card-BG: hsl(228, 28%, 20%);
-    --DT-Desaturated-Blue: hsl(228, 34%, 66%);
-    --DT-White: hsl(0, 0%, 100%);
+    --Toggle: hsl(230, 22%, 74%);
+    --Main-BG: hsl(0, 0%, 100%);
+    --Top-BG: hsl(225, 100%, 98%);
+    --Card-BG: hsl(227, 47%, 96%);
+    --Text-Blue: hsl(228, 12%, 44%);
+    --Text: hsl(230, 17%, 14%);
 }
 
 *, ::before, ::after {
@@ -33,7 +26,86 @@
     box-sizing: border-box;
 }
 
+.dark-mode {
+    --Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+    --Main-BG: hsl(230, 17%, 14%);
+    --Top-BG: hsl(232, 19%, 15%);
+    --Card-BG: hsl(228, 28%, 20%);
+    --Text-Blue: hsl(228, 34%, 66%);
+    --Text: hsl(0, 0%, 100%);
+}
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+body {
+    color: var(--Text);
+    background-color: var(--Main-BG);
+}
+
+/* Header Section */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 10em;
+}
+header h1 {
+    font-size: 2.8em;
+}
+
+header p {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--Text-Blue);
+    margin-top: .2em;
+}
+
+#toggle {
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 700;
+    line-height: 30px;
+    color: var(--Toggle);
+}
+
+#toggle input[type="checkbox"] {
+    display: none;
+}
+
+#toggle .check {
+    position: relative;
+    display: block;
+    width: 65px;
+    height: 30px;
+    background: var(--Toggle);
+    border-radius: 15px;
+    float: right;
+    margin-left: .8em;
+}
+
+#toggle .check::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: var(--Main-BG);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+#toggle input[type="checkbox"]:checked ~ .check {
+    background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+#toggle input[type="checkbox"]:checked ~ .check::before {
+    transform: translateX(34px);
+}
 
 /* Footer Section */
 .attribution { 
