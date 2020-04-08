@@ -136,8 +136,8 @@ main::before {
 }
 
 main .card {
-    width: 350px;
-    height: 300px;
+    width: 24%;
+    height: 280px;
     background-color: var(--Card-BG);
     border-radius: 5px;
     margin: 1em 0;
@@ -217,7 +217,7 @@ main .card:hover {
     height: 5px;
     background: var(--Instagram);
     border-radius: 5px 5px 0 0;
-    top: -40px;
+    top: -31px;
 }
 
 .card-y {
@@ -244,8 +244,8 @@ main .card:hover {
 }
 
 .states {
-    width: 350px;
-    height: 150px;
+    width: 24%;
+    height: 135px;
     background-color: var(--Card-BG);
     border-radius: 5px;
     margin: 1em 0;
