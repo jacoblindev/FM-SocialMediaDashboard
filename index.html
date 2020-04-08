@@ -9,7 +9,7 @@
   <title>FM | Social media dashboard</title>
 </head>
 
-<body>
+<body >
 
   <header>
     <div class="container">
@@ -85,53 +85,55 @@
 
   <section id="overview">
     <h3>Overview - Today</h3>
-    <div class="states">
-      <h4>Page Views</h4>
-      <img src="./images/icon-facebook.svg" alt="Facebook-logo">
-      <p>88</p>
-      <span><img src="./images/icon-up.svg" alt="Up-icon">3%</span>
-    </div>
-    <div class="states">
-      <h4>Likes</h4>
-      <img src="./images/icon-facebook.svg" alt="Facebook-logo">
-      <p>58</p>
-      <span><img src="./images/icon-down.svg" alt="Down-icon">5%</span>
-    </div>
-    <div class="states">
-      <h4>Likes</h4>
-      <img src="./images/icon-instagram.svg" alt="Instagram-logo">
-      <p>5678</p>
-      <span><img src="./images/icon-up.svg" alt="Up-icon">300%</span>
-    </div>
-    <div class="states">
-      <h4>Profile Views</h4>
-      <img src="./images/icon-instagram.svg" alt="Instagram-logo">
-      <p>58k</p>
-      <span><img src="./images/icon-up.svg" alt="Up-icon">1300%</span>
-    </div>
-    <div class="states">
-      <h4>Retweets</h4>
-      <img src="./images/icon-twitter.svg" alt="Twitter-logo">
-      <p>118</p>
-      <span><img src="./images/icon-up.svg" alt="Up-icon">308%</span>
-    </div>
-    <div class="states">
-      <h4>Likes</h4>
-      <img src="./images/icon-twitter.svg" alt="Twitter-logo">
-      <p>508</p>
-      <span><img src="./images/icon-up.svg" alt="Up-icon">550%</span>
-    </div>
-    <div class="states">
-      <h4>Likes</h4>
-      <img src="./images/icon-youtube.svg" alt="YouTube-logo">
-      <p>108</p>
-      <span><img src="./images/icon-down.svg" alt="Down-icon">50%</span>
-    </div>
-    <div class="states">
-      <h4>Total Views</h4>
-      <img src="./images/icon-youtube.svg" alt="YouTube-logo">
-      <p>1408</p>
-      <span><img src="./images/icon-down.svg" alt="Down-icon">12%</span>
+    <div class="s-cards">
+      <div class="states">
+        <h4>Page Views</h4>
+        <img class="logo" src="./images/icon-facebook.svg" alt="Facebook-logo">
+        <p>88</p>
+        <span class="up"><img src="./images/icon-up.svg" alt="Up-icon">3%</span>
+      </div>
+      <div class="states">
+        <h4>Likes</h4>
+        <img class="logo" src="./images/icon-facebook.svg" alt="Facebook-logo">
+        <p>58</p>
+        <span class="down"><img src="./images/icon-down.svg" alt="Down-icon">5%</span>
+      </div>
+      <div class="states">
+        <h4>Likes</h4>
+        <img class="logo" src="./images/icon-instagram.svg" alt="Instagram-logo">
+        <p>5678</p>
+        <span class="up"><img src="./images/icon-up.svg" alt="Up-icon">300%</span>
+      </div>
+      <div class="states">
+        <h4>Profile Views</h4>
+        <img class="logo" src="./images/icon-instagram.svg" alt="Instagram-logo">
+        <p>58k</p>
+        <span class="up"><img src="./images/icon-up.svg" alt="Up-icon">1300%</span>
+      </div>
+      <div class="states">
+        <h4>Retweets</h4>
+        <img class="logo" src="./images/icon-twitter.svg" alt="Twitter-logo">
+        <p>118</p>
+        <span class="up"><img src="./images/icon-up.svg" alt="Up-icon">308%</span>
+      </div>
+      <div class="states">
+        <h4>Likes</h4>
+        <img class="logo" src="./images/icon-twitter.svg" alt="Twitter-logo">
+        <p>508</p>
+        <span class="up"><img src="./images/icon-up.svg" alt="Up-icon">550%</span>
+      </div>
+      <div class="states">
+        <h4>Likes</h4>
+        <img class="logo" src="./images/icon-youtube.svg" alt="YouTube-logo">
+        <p>108</p>
+        <span class="down"><img src="./images/icon-down.svg" alt="Down-icon">50%</span>
+      </div>
+      <div class="states">
+        <h4>Total Views</h4>
+        <img class="logo" src="./images/icon-youtube.svg" alt="YouTube-logo">
+        <p>1408</p>
+        <span class="down"><img src="./images/icon-down.svg" alt="Down-icon">12%</span>
+      </div>
     </div>
   </section>
 
@@ -141,6 +143,23 @@
       <a href="https://github.com/jacoblindev" target="_blank">Jacob Lin</a> 👊🏼2020
     </div>
   </footer>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      $('input[type="checkbox"]').click(function(){
+            if($(this).prop("checked") == true) {
+              $("body").addClass("dark-mode");
+            }
+            else {
+              $("body").removeClass("dark-mode");
+            }
+        });
+    });
+  </script>
 </body>
 
 </html>

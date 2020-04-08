@@ -48,7 +48,7 @@ body {
 /* Header Section */
 header {
     background-color: var(--Top-BG);
-    height: 30vh;
+    height: 15vh;
 }
 
 header .container {
@@ -57,6 +57,7 @@ header .container {
     align-items: center;
     padding-top: 3em;
 }
+
 header h1 {
     font-size: 2.8em;
 }
@@ -73,7 +74,7 @@ header p {
     font-size: 1.3em;
     font-weight: 700;
     line-height: 30px;
-    color: var(--Toggle);
+    color: var(--Text-Blue);
 }
 
 #toggle input[type="checkbox"] {
@@ -119,7 +120,19 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
-    top: -15vh;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 125%;
+    height: 15vh;
+    background-color: var(--Top-BG);
+    z-index: -1;
+    transform: translateX(-10%);
 }
 
 main .card {
@@ -127,12 +140,17 @@ main .card {
     height: 300px;
     background-color: var(--Card-BG);
     border-radius: 5px;
-    margin: 2em 0;
+    margin: 1em 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+main .card:hover {
+    filter: contrast(.85);
+    cursor: pointer;
 }
 
 .card .title {
@@ -206,14 +224,116 @@ main .card {
     border-top: 5px solid var(--YouTube);
 }
 
+/* Overview Section */
+#overview {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.s-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#overview h3 {
+    font-size: 2.2em;
+    color: var(--Text-Blue);
+    margin: .6em 0;
+}
+
+.states {
+    width: 350px;
+    height: 150px;
+    background-color: var(--Card-BG);
+    border-radius: 5px;
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    /* text-align: center; */
+    grid-template-areas: "title img"
+                         "num update";
+    padding: 2em;
+}
+
+.states:hover {
+    filter: contrast(.85);
+    cursor: pointer;
+}
+
+.states h4 {
+    grid: title;
+    font-size: 1.3em;
+    color: var(--Text-Blue);
+    justify-self: flex-start;
+}
+
+.states .logo {
+    width: 30px;
+    justify-self: flex-end;
+}
+
+.states p {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--Text);
+    justify-self: flex-start;
+}
+
+.states span {
+    font-size: 1.2em;
+    font-weight: 700;
+    justify-self: flex-end;
+}
+
 /* Footer Section */
 .attribution { 
     font-size: 12px; 
+    color: var(--Text);
     text-align: center; 
+    margin: 1.2em 3em;
 }
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
     text-decoration: none;
     font-weight: 700;
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        width: 90%;
+    }
+
+    /* Header Section */
+    header {
+        height: 30vh;
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin-top: .5em;
+        padding-bottom: 1.8em;
+        border-bottom: 1px solid var(--Toggle);
+    }
+
+    #toggle {
+        margin: 1.2em 0;
+    }
+
+    #toggle .check {
+        right: -85%;
+    }
 }
